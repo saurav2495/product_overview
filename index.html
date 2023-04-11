@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"> Products </a>
+      <ul>
+        <li><a href="#">Home </a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">What's New </a></li>
+        <li><a href="#">Contact </a></li>
+      </ul>
+    </header>
+    <section class="banner">
+      <div class="imgbx">
+        <img src="img1.jpg" class="active" />
+        <img src="img2.jpg" />
+        <img src="img3.jpg" />
+        <img src="img4.jpg" />
+      </div>
+      <div class="contentBx">
+        <div class="active">
+          <h2>Slide Two One</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+            molestias quis deserunt, fuga at aperiam hic repellendus voluptas
+            sed eaque.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Two Two</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+            molestias quis deserunt, fuga at aperiam hic repellendus voluptas
+            sed eaque.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Two Three</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+            molestias quis deserunt, fuga at aperiam hic repellendus voluptas
+            sed eaque.
+          </p>
+          <a href="#">Details</a>
+        </div>
+        <div>
+          <h2>Slide Two Four</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+            molestias quis deserunt, fuga at aperiam hic repellendus voluptas
+            sed eaque.
+          </p>
+          <a href="#">Details</a>
+        </div>
+      </div>
+      <div class="controls">
+        <li onclick="prevslide();prevslideText();"></li>
+        <li onclick="nextslide();nextslideText();"></li>
+      </div>
+    </section>
+    <script type="text/javascript">
+      const imgbx = document.querySelector(".imgbx");
+      const slides = imgbx.getElementsByTagName("img");
+      var i = 0;
+
+      function nextslide() {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }
+
+      function prevslide() {
+        slides[i].classList.remove("active");
+        i = (i - 1 + slides.length) % slides.length;
+        slides[i].classList.add("active");
+      }
+
+      const contentBx = document.querySelector(".contentBx");
+      const slidesText = imgbx.getElementsByTagName("div");
+      var j = 0;
+
+      function nextslideText() {
+        slidesText[j].classList.remove("active");
+        j = (j + 1) % slidesText.length;
+        slidesText[j].classList.add("active");
+      }
+
+      function prevslideText() {
+        slidesText[j].classList.remove("active");
+        j = (j - 1 + slidesText.length) % slidesText.length;
+        slidesText[j].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
